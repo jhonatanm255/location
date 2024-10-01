@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <header class="bg-[url(images/pattern-bg-desktop.png)] bg-cover bg-center h-80">
+    <h1 class="text-center py-8 text-white text-4xl font-semibold">IP Address Tracker</h1>
+    <div class="flex justify-center">
+      <input id="ip-num" class="py-4 rounded-l-lg px-6 w-1/3" type="text" placeholder=" Search for any IP address or domain">
+      <button id="btn-ip" class="text-center font-semibold text-white py-4 px-5 bg-black -ml-0 rounded-r-lg">></button>
+    </div>
+    
+  </header>
+  <div class="w-full h-screen" id="map"></div>
+<!-- 
+  IP Address Tracker
+
+  Search for any IP address or domain
+
+  IP Address
+  Location
+  Timezone
+    UTC 
+  ISP
+   -->
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="map.js"></script>
+</body>
+</html>
