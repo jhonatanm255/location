@@ -28,7 +28,39 @@ L.marker([51.5, -0.09]).addTo(map)
         // Verifica si hay información geográfica
         if (data.location && data.location.country !== 'ZZ') {
           // Muestra la información de ubicación en la consola
-          console.log(data);
+          const ip = data.ip;
+          const city = data.location.city;
+          const region = data.location.region;
+          const timeZone = data.location.timezone;
+          const isp = data.isp;
+
+          const plantilla = `
+            <div class="p-3">
+              <p class="text-xs text-center font-bold text-slate-500 sm:mb-4 sm:text-xl">IP Address</p>
+              <p class="sm:text-2xl text-lg font-bold text-slate-800 text-center">${ip}</p>
+            </div>
+
+            <div class="p-3 sm:border-l sm:border-solid sm:border-gray-300">
+              <p class="sm:text-xl text-xs text-center font-bold text-slate-500 sm.mb-4">Location</p>
+              <div class="block">
+              <p class="sm:text-2xl text-lg font-bold text-slate-800 text-center">${city}, ${region}</p>
+              </div>
+            </div>
+
+            <div class="p-3 sm:border-l sm:border-solid sm:border-gray-300">
+              <p class="sm:text-xl text-xs text-center font-bold text-slate-500 sm:mb-4">Timezone</p>
+              <p class="sm:text-2xl text-lg font-bold text-slate-800 text-center">UTC+ ${timeZone}</p>
+            </div>
+
+            <div class="p-3 sm:border-l sm:border-solid sm:border-gray-300">
+              <p class="sm:text-xl text-xs text-center font-bold text-slate-500 sm:mb-4">ISP</p>
+              <p class="sm:text-2xl text-lg font-bold text-slate-800 text-center">${isp}</p>
+            </div>
+          `
+          const section = document.getElementById('seccion');
+          section.innerHTML = plantilla
+
+          
     
           // Muestra la ubicación en el mapa
           const lat = data.location.lat;
